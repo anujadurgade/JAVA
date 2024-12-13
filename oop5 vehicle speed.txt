@@ -1,0 +1,415 @@
+/*NAME :Anuja mohan durgade
+Implement and interface for vehicales consider the example of vehicals 
+like bicycle , car and bike ...*/
+
+package exp5;
+public interface Vehical {
+public void gearChange(int a);
+public void dpeedUp();
+public void applyBrakes();
+public void display();
+}
+
+package exp5;
+public class Car implements Vehical {
+int gear,speed;
+public Car()
+{
+System.out.println("\tCar started successfully\n ");
+gear=1;
+speed=10;
+}
+public void gearChange(int a)
+{
+if(a < 6 && a > 0)
+{
+gear = a;
+System.out.println(" Car Gear changed Success fully");
+}
+else
+System.out.println(" Car Gear is Out Of Range \n");
+}
+public void speedUp()
+{
+if((speed+5) < 125 )
+{
+speed += 5;
+System.out.println("Car speed increased ");
+}
+else
+System.out.println("Speed Cannot Be Increased Above 25");
+}
+public void applyBrakes()
+{
+if( (speed-5) > 0)
+{
+speed -= 5;
+System.out.println("Car Speed Reduced Successfull");
+}
+else
+{
+speed = 0;
+gear= 0;
+System.out.println("Car stopped Successfully\n ");
+}
+}
+public void display()
+{
+System.out.println("CAR SPEED IS =" + speed +"Kmhr AND GEAR IS ="+ gear);
+}
+public void dpeedUp() {
+}
+}
+
+package exp5;
+public class Bike implements Vehical {
+int gear,speed;
+public Bike()
+{
+System.out.println("\tbike started successfully\n ");
+gear=1;
+speed=10;
+}
+public void gearChange(int a)
+{
+if(a < 5 && a > 0)
+{
+gear = a;
+System.out.println(" Bike Gear changed Success fully");
+}
+else
+System.out.println(" Bike Gear is Out Of Range \n");
+}
+public void speedUp()
+{
+if((speed+5) < 65 )
+{
+speed += 5;
+System.out.println("bike speed increased ");
+}
+else
+System.out.println("Speed Cannot Be Increased Above 25");
+}
+public void applyBrakes()
+{
+if( (speed-5) > 0)
+{
+speed -= 5;
+System.out.println("Bike Speed Reduced Successfull");
+}
+else
+{
+speed = 0;
+gear= 0;
+System.out.println("Bike stopped Successfully\n ");
+}
+}
+public void display()
+{
+System.out.println("BIKE SPEED IS =" + speed +"Kmhr AND GEAR IS ="+ gear);
+}
+public void dpeedUp() {
+}
+}
+
+package exp5;
+public class Bicycle implements Vehical {
+int gear,speed;
+public Bicycle()
+{
+System.out.println("\tBicycle started successfully\n ");
+gear=1;
+speed=10;
+}
+public void gearChange(int a)
+{
+if(a < 7 && a > 0)
+{
+gear = a;
+System.out.println("Gear changed Success fully");
+}
+else
+System.out.println("Gear is Out Of Range \n");
+}
+public void speedUp()
+{
+if((speed+5) < 25 )
+{
+speed += 5;
+System.out.println("Bicycles speed increased ");
+}
+else
+System.out.println("Speed Cannot Be Increased Above 25");
+}
+public void applyBrakes()
+{
+if( (speed-5) > 0)
+{
+speed -= 5;
+System.out.println("Speed Reduced Successfull");
+}
+else
+{
+speed = 0;
+gear= 0;
+System.out.println("Bicycle stopped Successfully\n ");
+}
+}
+public void display()
+{
+System.out.println("BICYCLE'S SPEED IS =" + speed +"Kmhr AND GEAR IS ="+ 
+gear);
+}
+public void dpeedUp() {
+}
+}
+
+package exp5;
+import java.util.Scanner;
+public class TestVehical
+ {
+ public static void main(String[] args)
+ {
+ Vehical v = new Car();
+ Scanner sc = new Scanner(System.in);
+ int x,y,a;
+ do
+ {
+ System.out.println("Select vehical");
+ System.out.println("1:\t for Bicycle");
+ System.out.println("2:\t for Bike");
+ System.out.println("3:\t for car");
+ System.out.println("4:\t for exit");
+ System.out.println("Enter your choice...");
+ x = sc.nextInt();
+switch(x)
+{
+case 1:
+v= new Bicycle();
+break;
+case 2:
+v= new Bike();
+break;
+case 3:
+v= new Car();
+break;
+case 4:
+System.exit(0);
+default:
+System.out.println(" Invalid choice terminating program");
+System.exit(0);
+}do
+{
+System.out.println("Select operation");
+System.out.println("1:\t for gear change");
+System.out.println("2:\t for speed up");
+System.out.println("3:\t for apply brak");
+System.out.println("4:\t for display");
+System.out.println("5:\t change vehical");
+System.out.println("Enter your choice...");
+y = sc.nextInt();
+switch(y)
+{
+case 1:
+ System.out.println(" Enter gear number:");
+ a= sc.nextInt();
+ v.gearChange(a);
+ break;
+case 2:
+ v.dpeedUp();
+ break;
+case 3:
+ v.applyBrakes();
+ break;
+case 4:
+ v.display();
+ break;
+case 5:
+ System.out.println(" buke change");
+ break;
+default:
+ System.out.println(" Invalid choice");
+ } 
+}
+ while(y!= 5 );
+}
+ while(x != 4); 
+ sc.close();
+ }
+ }
+
+
+OUTPUT :
+Car started successfully
+Select vehical
+1: for Bicycle
+2: for Bike
+3: for car
+4: for exit
+Enter your choice...
+1
+Bicycle started successfully
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+1
+ Enter gear number:
+2
+Gear changed Success fully
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+2
+Bicycles speed increased 
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+2
+Bicycles speed increased 
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+4
+BICYCLE'S SPEED IS =20Kmhr AND GEAR IS =2
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+5
+ vehical change
+Select vehical
+1: for Bicycle
+2: for Bike
+3: for car
+4: for exit
+Enter your choice...
+2
+Bicycle started successfully
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+1
+ Enter gear number:
+4
+ Bike Gear changed Success fully
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+2
+Bicycles speed increased 
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+3
+Bike Speed Reduced Successfull
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+4
+BIKE SPEED IS =10Kmhr AND GEAR IS =4
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+5
+ vehical change
+Select vehical
+1: for Bicycle
+2: for Bike
+3: for car
+4: for exit
+Enter your choice...
+3
+Car started successfully
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+1
+ Enter gear number:
+4
+ Car Gear changed Success fully
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+2
+Car speed increased 
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+2
+Car speed increased 
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+4
+CAR SPEED IS =20Kmhr AND GEAR IS =4
+Select operation
+1: for gear change
+2: for speed up
+3: for apply break
+4: for display
+5: change vehical
+Enter your choice...
+5
+ vehical change
+Select vehical
+1: for Bicycle
+2: for Bike
+3: for car
+4: for exit
+Enter your choice...
+4
